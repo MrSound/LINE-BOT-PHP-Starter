@@ -55,6 +55,7 @@ if (!is_null($events['events']) && $method == 'reply') {
 	}
 }else if($method == 'push'){
     $userId = 'U52aa62da4aa11ce1697d7cc38564bcbb';
+    $userId = 'sound014';
     $text = "คุณคือผู้โชคดี";
     // Build message to reply back
     $messages1 = [
