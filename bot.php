@@ -18,9 +18,13 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
+			$messages1 = [
 				'type' => 'text',
 				'text' => $text
+			];
+            $messages2 = [
+				'type' => 'text',
+				'text' => 'ทดสอบข้อความที่สอง'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -28,7 +32,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				//'replyToken' => $replyToken,
                 'to' => [$userId],
-				'messages' => [$messages,"ทดสอบตอบกลับ 2 ข้อความ"],
+				'messages' => [$messages1,$messages2],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
