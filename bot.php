@@ -54,9 +54,13 @@ if (!is_null($events['events']) && $method == 'reply') {
 		}
 	}
 }else if($method == 'push'){
+    $full_name = $_GET['full_name'];
+    $mobile = $_GET['mobile'];
+
     $userId = 'sound014';
-    $userId = 'U52aa62da4aa11ce1697d7cc38564bcbb';
-    $text = "คุณคือผู้โชคดี";
+    $userId_Nui = 'U52aa62da4aa11ce1697d7cc38564bcbb';
+    $userId_Kae = 'Uc2f5b7ab2bdd1f1ec6ffbd66b296a22d';
+    $text = "ข้อความอัติโนมัติแจ้งเตือนการ Register : ".$full_name." เบอร์โทร ".$mobile;
     // Build message to reply back
     $messages1 = [
         'type' => 'text',
@@ -71,7 +75,7 @@ if (!is_null($events['events']) && $method == 'reply') {
     $url = 'https://api.line.me/v2/bot/message/push';
     $data = [
         //'replyToken' => $replyToken,
-        'to' => $userId,
+        'to' => $userId_Nui,
         'messages' => [$messages1],
     ];
     $post = json_encode($data);
