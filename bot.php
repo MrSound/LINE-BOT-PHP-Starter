@@ -60,7 +60,9 @@ if (!is_null($events['events']) && $method == 'reply') {
     $userId = 'sound014';
     $userId_Nui = 'U52aa62da4aa11ce1697d7cc38564bcbb';
     $userId_Kae = 'Uc2f5b7ab2bdd1f1ec6ffbd66b296a22d';
-    $text = "ข้อความอัติโนมัติแจ้งเตือนการ Register : ".$full_name." เบอร์โทร ".$mobile;
+    $userId_Tee = 'Ucd6f7e10e8d5a1da2626636ca6d43139';
+    $userId_Code = 'Ud8c8c659e98e4d3a8321048b4c0272ea';
+    $text = "ข้อความอัตโนมัติแจ้งเตือนการ Register : ".$full_name." เบอร์โทร ".$mobile;
     // Build message to reply back
     $messages1 = [
         'type' => 'text',
@@ -76,7 +78,7 @@ if (!is_null($events['events']) && $method == 'reply') {
     $url_multi = 'https://api.line.me/v2/bot/message/multicast';
     $data = [
         //'replyToken' => $replyToken,
-        'to' => [$userId_Nui,$userId_Kae],
+        'to' => [$userId_Nui,$userId_Kae,$userId_Tee,$userId_Code],
         'messages' => [$messages1],
     ];
     $post = json_encode($data);
